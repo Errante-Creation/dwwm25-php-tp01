@@ -49,3 +49,10 @@ DELETE ci FROM cities ci
 JOIN regions r ON ci.fk_id_region=r.id_region
 JOIN countries co ON r.fk_id_country=co.id_country
 WHERE co.id_country=5
+
+-- Trouver toutes les villes d'un pays donné, triées par nom de ville.
+SELECT ci.name_city FROM cities ci
+JOIN regions r ON ci.fk_id_region=r.id_region
+JOIN countries co ON r.fk_id_country=co.id_country
+WHERE co.id_country=5
+ORDER BY ci.name_city;
